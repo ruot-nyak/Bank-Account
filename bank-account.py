@@ -8,6 +8,9 @@ class BankAccount:
         self.balance = 0
         self.routing_number = 123456789
 
+    def atm_fee (self):
+        self.balance -= 2
+
     def deposit (self,amount):
         #+= automatically adds the inputed amount to our total balance
         self.balance += amount
@@ -16,7 +19,8 @@ class BankAccount:
     def withdraw (self, amount):
         if amount <= self.balance:
             self.balance -= amount
-            print(f'Dont spend the amount of: ${amount}. all in one place ;)')
+            self.atm_fee()
+            print(f'Dont spend the amount of: ${amount}. all in one place ;). Enjoy our $2 atm fee!')
         else:
             self.balance -= 10
             print(f'Insufficient funds')
