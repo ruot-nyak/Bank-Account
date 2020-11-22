@@ -33,6 +33,9 @@ class BankAccount:
         interest = self.balance * 0.00083
         self.balance += round(interest, 2)
 
+    def print_receipt(self):
+        print(f' {self.name}\n Account No: ****{str(self.account_number)[4:]}\n Routing No: {self.routing_number}\n Balance: {self.balance}')
+
         
 
 
@@ -42,11 +45,17 @@ print(my_acc.name)
 print(my_acc.account_number)
 print(my_acc.balance)
 print(my_acc.routing_number)
-#-----------------------------
+
+print('-----------------------------')
 #Testing deposit and withdraw function
 my_acc.deposit(20)
 my_acc.withdraw(21)
 print(my_acc.balance)
-#-----------------------------
+
+print('-----------------------------')
 #testing get_balance
 my_acc.get_balance()
+
+print('-------------------------------')
+#printing receipt
+my_acc.print_receipt()
